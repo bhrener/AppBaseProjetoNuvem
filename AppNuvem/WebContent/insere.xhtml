@@ -1,0 +1,44 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:define name="conteudo">
+		<h1>Inserir música favorita</h1>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"/>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"/>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("#form").validate({
+					rules:{
+						"nome":"required",
+						"email":"required",
+						"senha":"required"
+					}
+					messages:{
+						"nome":"Nome é obrigatorio"
+						"email": "O email é obrigatorio"
+						"senha": "senha obrigatoria"
+					}
+				});
+			});
+		</script>
+		
+		<h:form id="form">
+		<h:messages />
+		<h:panelGrid columns="2">
+			<h:outputLabel for="nome" value="Nome" />
+			<h:inputText id="nome" label="nome" required="false" value="#{loginBean.nome}" name="nome"/>
+			<h:outputLabel for="email" value="Email" />
+			<h:inputText id="email" label="email" required="false" value="#{loginBean.email}" name="email"/>		
+			<h:outputLabel for="senha" value="Senha" />
+			<h:inputSecret id="senha" label="senha" required="false" value="#{loginBean.senha}" name="senha"/>		
+			<h:commandButton id="salvar" class="btn btn-primary" 
+				value="Salvar" action="#{loginBean.cadastrar}" />
+		</h:panelGrid>
+		
+		</h:form>
+	</ui:define>
+
+</ui:composition>
