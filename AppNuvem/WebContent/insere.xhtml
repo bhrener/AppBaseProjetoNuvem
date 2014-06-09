@@ -29,11 +29,11 @@
 		<h:messages />
 		<h:panelGrid columns="2">
 			<h:outputLabel for="nome" value="Nome" />
-			<h:inputText id="nome" label="nome" required="false" value="#{loginBean.nome}" name="nome"/>
+			<h:inputText id="nome" label="nome" required="true" value="#{loginBean.nome}" name="nome"/>
 			<h:outputLabel for="email" value="Email" />
-			<h:inputText id="email" label="email" required="false" value="#{loginBean.email}" name="email"/>		
+			<h:inputText id="email" label="email" required="true" value="#{loginBean.email}" name="email"/>		
 			<h:outputLabel for="senha" value="Senha" />
-			<h:inputSecret id="senha" label="senha" required="false" value="#{loginBean.senha}" name="senha"/>		
+			<h:inputSecret id="senha" label="senha" required="true" value="#{loginBean.senha}" name="senha"/>		
 			<h:commandButton id="salvar" class="btn btn-primary" 
 				value="Salvar" action="#{loginBean.cadastrar}" />
 		</h:panelGrid>
